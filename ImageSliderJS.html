@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<meta UTF-8>
+
+<html>
+<title>
+
+	</title>
+<head>
+<style>
+	
+button{
+	background-color: green;
+	font-size: 30px;
+	color: white;
+	border-radius: 10px 0px 10px 0px;
+}
+</style>
+
+
+	</head>
+
+
+	<body>
+
+	<div style="padding-top: 50px;text-align: center;">
+		
+	<h1>Image Slider Using JavaScript</h1>
+  <button onclick="prev()"> Prev </button>
+  <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" 
+    width="500px" height="300px"/>
+  <button onclick="next()"> Next </button>
+</div>
+
+<script>
+var images = ["img1.jpg",
+    "img2.jpg",
+    "img3.jpg"
+];
+var num = 0;
+var t = setInterval(next, 7000);
+
+function previous() {
+    var slider = document.getElementById("slider");
+    num--;
+    if (num < 0) {
+        num = images.length - 1;
+    }
+    slider.src = images[num];
+}
+
+
+function next() {
+    var slider = document.getElementById("slider");
+    num++;
+    if (num > images.length - 1) {
+        num = 0;
+    }
+    slider.src = images[num];
+}
+
+
+
+
+</script>
+
+
+
+	</body>
+</html>
